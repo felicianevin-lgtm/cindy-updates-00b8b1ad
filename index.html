@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Progress Updates for Cindy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f2ea;--card:#fffdf9;--ink:#1d2433;--muted:#6b6f78;--line:#e6dfd2;--gold:#a8824a;--gold-soft:#f1e7d6;--navy:#1d2a44;--ok:#2f6b4f;--ok-soft:#e3efe8;--warn:#8a5a12;--warn-soft:#f7ead2}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--card:#1c2029;--ink:#ece8e1;--muted:#a3a7b0;--line:#2d323d;--gold:#cfa868;--gold-soft:#2c2619;--navy:#0f1626;--ok:#7cc4a0;--ok-soft:#1d2e26;--warn:#e2b56a;--warn-soft:#2f2617}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--gold)}
+.hero{background:var(--navy);color:#f6f2ea;padding:56px 16px 88px;text-align:center}
+.hero .kicker{letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:#cfa868}
+.hero h1{font:600 clamp(34px,6vw,54px)/1.1 "Cormorant Garamond",Georgia,serif;margin:12px 0 10px}
+.hero p{margin:0;color:#c9ccd3}
+.status{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.status span{border:1px solid rgba(207,168,104,.45);border-radius:999px;padding:6px 14px;font-size:14px}
+nav{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+nav a{color:#f6f2ea;text-decoration:none;font-size:14px;padding:4px 10px;border-radius:6px;opacity:.85}
+nav a:hover{background:rgba(255,255,255,.08);opacity:1}
+main{max-width:980px;margin:-56px auto 0;padding:0 16px 56px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.tiles.small{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.tile .num{font:600 34px/1 "Cormorant Garamond",Georgia,serif;color:var(--gold)}
+.tile .lbl{font-weight:600;margin-top:8px;font-size:14px}
+.tile .sub{color:var(--muted);font-size:13px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:32px;margin-bottom:20px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:12px;color:var(--gold);font-weight:600}
+h2{font:600 32px/1.15 "Cormorant Garamond",Georgia,serif;margin:8px 0 14px}
+h3{font-size:15px;margin:28px 0 10px;letter-spacing:.02em}
+.muted,.asof{color:var(--muted)} .asof{font-size:13px;margin-top:10px}
+.lede{font-size:17px}
+.video{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#0d1220;margin:6px 0 6px}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video.pending{display:grid;place-items:center;color:#c9ccd3;text-align:center}
+.video.pending span{display:block;font-size:14px;opacity:.75}
+.vhelp{font-size:13px;color:var(--muted);margin:0 0 14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ticks{padding-left:0;list-style:none} .ticks li{padding-left:22px;position:relative;margin:8px 0}
+.ticks li:before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.asks{background:var(--gold-soft);border-radius:12px;padding:4px 20px 10px}
+.asks ol{padding-left:20px} .asks li{margin:8px 0}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:620px}
+th,td{padding:11px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+tbody tr:last-child td{border-bottom:0} .r{text-align:right;white-space:nowrap}
+.next{margin-top:14px;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+.next>span{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-weight:600}
+.next ul{margin:0;padding:0;list-style:none}
+.bar{margin:14px 0} .bar-top{display:flex;justify-content:space-between;gap:10px;font-size:14px;font-weight:500}
+.bar-n{color:var(--muted);white-space:nowrap}
+.track{height:10px;background:var(--line);border-radius:99px;overflow:hidden;margin-top:6px}
+.fill{height:100%;background:linear-gradient(90deg,var(--gold),#d9b77c);border-radius:99px}
+.note{font-size:13px;color:var(--muted);margin-top:4px}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pill{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.pill.warn{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.list{list-style:none;padding:0;margin:0}
+.list li{display:flex;gap:14px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.list li:last-child{border-bottom:0}
+.list .date{color:var(--muted);font-size:13px;min-width:96px}
+.list a{color:var(--ink);text-decoration:none;font-weight:500;flex:1;min-width:200px} .list a:hover{color:var(--gold)}
+.list li>span:nth-child(2){flex:1}
+.list details{flex:1} .list summary{cursor:pointer;font-weight:500}
+.badge{font-size:12px;border-radius:999px;padding:2px 10px;background:var(--line);color:var(--muted);white-space:nowrap;text-decoration:none;font-weight:500;flex:0 0 auto!important;min-width:0!important}
+.badge.ok{background:var(--ok-soft);color:var(--ok)} .badge.wait{background:var(--warn-soft);color:var(--warn)}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:8px 16px 40px}
+@media (max-width:760px){.opt{display:none}table{min-width:0}th,td{padding:9px 7px}.tiles{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}.card{padding:22px 18px}h2{font-size:27px}.hero{padding:40px 16px 80px}}
+</style></head><body>
+<header class="hero">
+  <div class="kicker">Cindy Litzinger &middot; Progress Updates</div>
+  <h1>Where everything stands</h1>
+  <p>Video walkthroughs and live numbers from Felicia, all in one place.</p>
+  <div class="status"><span>Latest update: Nov 17, 2026</span><span>Next update by: Dec 24, 2026</span></div>
+  <nav><a href="#latest">Latest</a><a href="#kathleen">Kathleen's database</a><a href="#content">Blog &amp; Google</a><a href="#past">Past updates</a></nav>
+</header>
+<main>
+  <div class="tiles"><div class="tile"><div class="num">3</div><div class="lbl">Lux &amp; Land Briefs sent</div><div class=sub>~467 delivered each</div></div><div class="tile"><div class="num">14.2%</div><div class="lbl">Average open rate</div><div class=sub>of people who received it, 0 unsubscribes</div></div><div class="tile"><div class="num">6</div><div class="lbl">Blog posts live</div><div class=sub>on cindylitzinger.exprealty.com</div></div><div class="tile"><div class="num">7</div><div class="lbl">Google profile posts</div><div class=sub>blog + sold spotlights</div></div></div>
+  
+<section class="card latest" id="latest">
+  <div class="eyebrow">Latest update &middot; Nov 17, 2026 &middot; 3 min</div>
+  <h2>Kathleen&#x27;s database, the Lux &amp; Land Brief, and who&#x27;s looking at homes</h2>
+  <div class="video pending"><div><strong>Video uploading</strong><span>It will appear here shortly.</span></div></div>
+  <p class="lede">A quick walk through Kathleen&#x27;s BoldTrail: every Lux &amp; Land Brief that has gone out so far, how many people opened it, the one scheduled for tomorrow, and the people in her database who are actively looking at listings right now.</p>
+  <div class="two">
+    <div><h3>What I walk through</h3><ul class="ticks"><li>Scheduled Mass Emails: three Briefs sent (10/29, 11/04, 11/12), the next one goes out Wed 11/18</li><li>Each Brief&#x27;s numbers: about 470 delivered every week, 12 to 16% opening it, zero unsubscribes, zero bounces</li><li>Dashboard activity: database contacts viewing Auburn and Sacramento listings this month (your call list)</li></ul></div>
+    <div class="asks"><h3>What I need from you</h3><ol><li>Look over the hot-lead names on Kathleen&#x27;s dashboard and tell me who you want a personal call or text for</li><li>The 19 contacts who replied STOP to a text are still on hold for email. Your call: enrol them or leave them out</li></ol></div>
+  </div>
+</section>
+  
+<section class="card" id="kathleen">
+  <div class="eyebrow">Kathleen Johnson Rose &times; Cindy</div>
+  <h2>Kathleen's database &amp; the Lux &amp; Land Brief</h2>
+  <p class="muted">The Brief is Kathleen's weekly email to her database, written from your Monday Mojo. Sent from her BoldTrail every Wednesday.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Sent</th><th>Subject line</th><th class="r opt">Delivered</th><th class=r>Opened</th><th class=r>Open rate</th><th class="r opt">Clicks</th><th class="r opt">Unsubs</th></tr></thead>
+    <tbody><tr><td>Nov 12, 2026</td><td>A wedding week (and a smarter move than a price cut)</td><td class='r opt'>464</td><td class=r>56</td><td class=r><strong>12.1%</strong></td><td class='r opt'>2</td><td class='r opt'>0</td></tr><tr><td>Nov 4, 2026</td><td>A little Halloween magic (and a home insurance tip)</td><td class='r opt'>469</td><td class=r>75</td><td class=r><strong>16.0%</strong></td><td class='r opt'>3</td><td class='r opt'>0</td></tr><tr><td>Oct 29, 2026</td><td>Some news I wanted you to hear from me first</td><td class='r opt'>469</td><td class=r>68</td><td class=r><strong>14.5%</strong></td><td class='r opt'>3</td><td class='r opt'>0</td></tr></tbody></table></div>
+  <div class="next"><span>Up next</span><ul><li><strong>Nov 18, 2026</strong> &middot; Our daughter said I do (and the truth about foreclosures) &middot; about 500 contacts</li></ul></div>
+  <p class="asof">Email numbers as of Nov 17, 2026, from Kathleen&#x27;s BoldTrail &gt; Marketing &gt; Scheduled Mass Emails &gt; View &gt; Analytics.</p>
+  
+  <h3>Database setup progress</h3>
+  <p class="muted">Every contact gets up to three monthly touches: a market report, a home value report (if we have their address), and a search alert. Set up one contact at a time in BoldTrail.</p>
+  <div class="bar"><div class="bar-top"><span>Monthly market report set up</span><span class="bar-n">186 of 801</span></div><div class="track"><div class="fill" style="width:23%"></div></div><div class=note>44 skipped: unsubscribed in BoldTrail, already gone, or duplicates to merge first</div></div>
+  <div class="bar"><div class="bar-top"><span>Home value report set up</span><span class="bar-n">7 of 64</span></div><div class="track"><div class="fill" style="width:11%"></div></div><div class=note>Only possible for contacts with a property address on file</div></div>
+  <div class="bar"><div class="bar-top"><span>Search alert set up</span><span class="bar-n">0 of 801</span></div><div class="track"><div class="fill" style="width:0%"></div></div><div class=note>Next phase</div></div>
+  <div class="bar"><div class="bar-top"><span>Contact names cleaned up</span><span class="bar-n">31 of 77</span></div><div class="track"><div class="fill" style="width:40%"></div></div><div class=note>Names that were an email username or blank (the rest had no real name to recover)</div></div>
+  <div class="pillrow">
+    <span class="pill">874 contacts in Kathleen's database</span>
+    <span class="pill">801 OK to email</span>
+    <span class="pill warn">19 waiting on your call (replied STOP to a text)</span>
+    <span class="pill">54 held back (opted out, fake or missing email)</span>
+  </div>
+  <p class="asof">Progress as of the last work session, Oct 15, 2026.</p>
+</section>
+  
+<section class="card" id="content">
+  <div class="eyebrow">Your website &amp; Google profile</div>
+  <h2>Blog posts &amp; Google Business Profile</h2>
+  <p class="muted">Every Monday Mojo becomes a blog post on your site, then a Google post that links back to it. Tap any title to see it live.</p>
+  <ul class="list"><li><span class="date">Nov 16, 2026</span><a href="https://cindylitzinger.exprealty.com/blog/a+Wedding%2C+Travel+Chaos+and+12+Groups+in+the+Rain%3F" target="_blank" rel="noopener">A Wedding, Travel Chaos and 12 Groups in the Rain?</a><span class="badge ok">On Google</span></li><li><span class="date">Nov 9, 2026</span><a href="https://cindylitzinger.exprealty.com/blog/Weddings%2C+Listings+and+Launches" target="_blank" rel="noopener">Weddings, Listings and Launches</a><span class="badge wait">Google reviewing</span></li><li><span class="date">Nov 2, 2026</span><a href="https://cindylitzinger.exprealty.com/blog/A+Little+Halloween+Magic+%26+a+Whole+Lot+of+Community%21" target="_blank" rel="noopener">A Little Halloween Magic &amp; a Whole Lot of Community!</a><span class="badge ok">On Google</span></li><li><span class="date">Oct 26, 2026</span><a href="https://cindylitzinger.exprealty.com/blog/Our+Little+Dinosaur+Invites+You%21+Plus%3A+Why+Builders+May+Be+More+Motivated+to+Sell%21" target="_blank" rel="noopener">Our Little Dinosaur Invites You! + Why Builders May Be More Motivated to Sell!</a><span class="badge ok">On Google</span></li><li><span class="date">Oct 19, 2026</span><a href="https://cindylitzinger.exprealty.com/blog/Monday+Mojo+-+Life+Doesn%E2%80%99t+Wait+for+the+Perfect+Market" target="_blank" rel="noopener">Life Doesn’t Wait for the Perfect Market</a><span class="badge ok">On Google</span></li><li><span class="date">Oct 12, 2026</span><a href="https://cindylitzinger.exprealty.com/blog/Luxury+Prices+Are+Up.+So+Why+Are+Homes+Taking+Longer+to+Sell%3F" target="_blank" rel="noopener">Luxury Prices Are Up. So Why Are Homes Taking Longer to Sell?</a><a class="badge ok" href="https://share.google/tt7Eulz2TEzHmAcws" target="_blank" rel="noopener">On Google</a></li></ul>
+  
+  <h3>Sold spotlights on Google</h3>
+  <p class="muted">One past sale goes on your Google profile every Monday.</p>
+  <ul class="list"><li><span class="date">Oct 28, 2026</span><span>5850 Our Way, Citrus Heights</span><span class="badge ok">Posted</span></li><li><span class="date">Nov 16, 2026</span><span>4053 Wilson Town Rd, Lincoln</span><span class="badge ok">Posted</span></li><li><span class="date">Queued</span><span>148 Clearwater Ct, Roseville</span><span class="badge">Up next</span></li><li><span class="date">Queued</span><span>6709 Stanley Ave, Carmichael</span><span class="badge">Up next</span></li><li><span class="date">Queued</span><span>5864 Riddio St, Citrus Heights</span><span class="badge">Up next</span></li><li><span class="date">Queued</span><span>3219 Outlook Dr, Rocklin</span><span class="badge">Up next</span></li><li><span class="date">Queued</span><span>949 Marvin Gardens Way #25, Rocklin</span><span class="badge">Up next</span></li></ul>
+  
+</section>
+  <section class="card" id="past"><div class="eyebrow">Archive</div><h2>Past updates</h2><p class=muted>This is the first one. Older updates will collect here, newest first.</p></section>
+</main>
+<footer>Private page for Cindy Litzinger. Please don't forward. &middot; Updated Nov 17, 2026 9:34 AM</footer>
+</body></html>
